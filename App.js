@@ -1,10 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Hello World!</Text>
+      <Text>Please Enter Alarm Configurations</Text>
+      <TextInput placeholder='Alarm Name' style={styles.textBox}/>
+      <TextInput placeholder='Alarm Time' style={styles.textBox}/>
+      <Button title="Add an Image" 
+        onPress={uploadImage} />
       <StatusBar style="auto" />
     </View>
   );
@@ -17,4 +21,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  textBox: {
+    display: 'flex',
+    borderColor: 'black',
+    borderWidth: 'thin',
+  },
 });
+
+function uploadImage() {
+  alert('I clicked it!')
+}
